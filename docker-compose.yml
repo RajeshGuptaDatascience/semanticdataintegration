@@ -1,0 +1,17 @@
+version: '3'
+services:
+  jira-fuseki:
+    image: stain/jena-fuseki
+    environment:
+      - ADMIN_PASSWORD=admin
+      - JVM_ARGS=-Xmx2g
+    ports:
+      - "3030:3030"
+
+  plutus-fuseki:
+    image: stain/jena-fuseki
+    environment:
+      - ADMIN_PASSWORD=admin
+      - JVM_ARGS=-Xmx2g
+    ports:
+      - "3031:3030"

@@ -1,0 +1,16 @@
+FROM openjdk:11-jre-slim
+
+RUN apt-get update && apt-get install -y wget
+
+WORKDIR /fuseki
+
+RUN wget https://dlcdn.apache.org/jena/binaries/apache-jena-5.1.0.tar.gz && \
+    tar -xzf apache-jena-5.1.0.tar.gz && \
+    mv apache-jena-5.1.0 fuseki && \
+    rm apache-jena-5.1.0.tar.gz
+
+COPY ./output/jira_knowledge_graph.ttl /fuseki/jira_data.ttl
+
+EXPOSE 3030
+
+CMD ["/bin/sh", "-c", "/fuseki/fuseki/fuseki-server --mem /ds"]

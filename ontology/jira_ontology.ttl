@@ -1,0 +1,24 @@
+@prefix : <http://example.org/jira#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Issue a rdfs:Class .
+:Project a rdfs:Class .
+:User a rdfs:Class .
+
+:hasProject a rdf:Property ;
+    rdfs:domain :Issue ;
+    rdfs:range :Project .
+
+:hasAssignee a rdf:Property ;
+    rdfs:domain :Issue ;
+    rdfs:range :User .
+
+:hasStatus a rdf:Property ;
+    rdfs:domain :Issue ;
+    rdfs:range xsd:string .
+
+:hasPriority a rdf:Property ;
+    rdfs:domain :Issue ;
+    rdfs:range xsd:string .

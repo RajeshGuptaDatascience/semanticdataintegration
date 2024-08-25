@@ -1,0 +1,23 @@
+@prefix : <http://example.org/plutus#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:Contract a rdfs:Class .
+:Party a rdfs:Class .
+
+:hasParty a rdf:Property ;
+    rdfs:domain :Contract ;
+    rdfs:range :Party .
+
+:hasValue a rdf:Property ;
+    rdfs:domain :Contract ;
+    rdfs:range xsd:decimal .
+
+:hasStartDate a rdf:Property ;
+    rdfs:domain :Contract ;
+    rdfs:range xsd:date .
+
+:hasEndDate a rdf:Property ;
+    rdfs:domain :Contract ;
+    rdfs:range xsd:date .

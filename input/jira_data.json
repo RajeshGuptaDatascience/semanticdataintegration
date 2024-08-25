@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "jira": "http://example.org/jira#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "jira:Issue1",
+      "@type": "jira:Issue",
+      "jira:hasProject": {"@id": "jira:Project1"},
+      "jira:hasAssignee": {"@id": "jira:User1"},
+      "jira:hasStatus": "In Progress",
+      "jira:hasPriority": "High"
+    },
+    {
+      "@id": "jira:Issue2",
+      "@type": "jira:Issue",
+      "jira:hasProject": {"@id": "jira:Project1"},
+      "jira:hasAssignee": {"@id": "jira:User2"},
+      "jira:hasStatus": "Open",
+      "jira:hasPriority": "Medium"
+    },
+    {
+      "@id": "jira:Project1",
+      "@type": "jira:Project"
+    },
+    {
+      "@id": "jira:User1",
+      "@type": "jira:User"
+    },
+    {
+      "@id": "jira:User2",
+      "@type": "jira:User"
+    }
+  ]
+}
